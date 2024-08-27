@@ -10,7 +10,7 @@ const Navbar = (props) => {
       {/* Navbar */}
       <nav>
         <div className="link">
-          <Link className="link" to="/TaazaKhabar">
+          <Link className="link" to="/NewsApp">
             Home
           </Link>
           <Link className="link" to="/business">
