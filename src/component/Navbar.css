@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100vmax / 1600 * 100;
+  @media (max-width: 992px) {
+    font-size: 60px;
+  }
+}
+
+body {
+  min-height: 100vh;
+  padding: 0.5rem;
+  color: #222;
+  background-color: #fff;
+  font-size: 0.24rem;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  top: -50px;
+}
+
+nav {
+  position: sticky;
+  top: 0; /* Ensure the navbar sticks to the top */
+  margin: auto;
+  width: 100%; /* Make navbar take full width */
+  height: 4rem; /* Increase the height for a more typical navbar size */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Increase gap for better spacing */
+
+  background-color: #0000009a;
+  transition: all 0.3s;
+  will-change: background-color, box-shadow, backdrop-filter;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+nav.highlight {
+  box-shadow: 0 0 12px #0003;
+  background-color: #fff2;
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 1rem; /* Increase font size for better visibility */
+  padding: 0.5rem 1rem; /* Add padding for clickable area */
+  transition: color 0.3s; /* Add transition for hover effect */
+  color:#ffffff;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #0000004a; /* Change color on hover */
+}
+
+.wrapper {
+  width: 90%;
+  padding: 1rem 0.5rem;
+  margin: auto;
+  
+  line-height: 2;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  /* Add padding-top to ensure content is below the navbar */
+  padding-top: 4rem; /* Adjust this value based on the height of the navbar */
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.content:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.content img {
+  width: 50%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack links vertically on smaller screens */
+    height: auto; /* Allow height to adjust */
+    gap: 1rem; /* Reduce gap for mobile */
+  }
+
+  .link {
+    font-size: 0.9rem; /* Slightly smaller font for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: auto; /* Allow more flexibility on smaller screens */
+  }
+
+  .link {
+    padding: 0.3rem; /* Adjust padding for smaller devices */
+    font-size: 0.8rem; /* Smaller font size for smaller devices */
+  }
+}
